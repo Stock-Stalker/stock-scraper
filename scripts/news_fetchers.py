@@ -7,7 +7,6 @@ from bs4 import BeautifulSoup
 import csv
 import datetime as dt
 import time
-from fuzzywuzzy import process
 from utils.helpers import (
     to_epoch,
     get_today_epoch,
@@ -22,7 +21,7 @@ class reddit_worldnews_fetcher:
     """Fetch news from external API for prediction model."""
 
     @staticmethod
-    def top25news(start_date, end_date, company_name):
+    def top25news(start_date, end_date, company_name, n):
         """
         Fetch the top n news headlines of a given date.
 

@@ -1,9 +1,10 @@
 """Obtain data for model training."""
-from news_fetchers import reddit_worldnews_fetcher, djia_fetcher
+from scripts.news_fetchers import reddit_worldnews_fetcher, djia_fetcher
 import pandas as pd
 
 import csv
 import time
+from fuzzywuzzy import process
 
 t1 = time.perf_counter()
 
@@ -60,7 +61,7 @@ def get_data(file_to_write):
         Sentiment: 0, 1, or 2
     """
     fieldnames = ["Label", "Ticker", "Headline"]
-    nasdaq_names = preprocess("../data/nasdaqlisted.csv")
+    nasdaq_names = preprocess("data/nasdaqlisted.csv", "companyName")
     counter = 0
     # If you're writing a file for the first time,
     # mode should = "w"
@@ -72,7 +73,7 @@ def get_data(file_to_write):
         for company_name in nasdaq_names:
             # You're able to change these dates as you see fit, even though they aren't parameterized.
             news = reddit_worldnews_fetcher.top25news(
-                "2000-01-01", "2021-03-13", company_name
+                "2000-01-01", "2021-03-13", company_name, 25
             )
             try:
                 for n in news:
@@ -95,10 +96,10 @@ def get_data(file_to_write):
 
 
 print("CALLING GET DATA")
-get_data("nasdaq_news.csv")
-# if __name__ == "__main__":
-#     with concurrent.futures.ProcessPoolExecutor() as executor:
-#         executor.map(get_data, nasdaq_names)
+
+if __name__ == "__main__":
+    # TODO: pass in your filepath if using a different file!
+    get_data("data/nasdaq_news.csv")
 
 t2 = time.perf_counter()
 print(f"Finished in {t2 - t1} seconds")

@@ -24,11 +24,37 @@ While you're welcome to write new data to the `data` folder, there are a few exi
 
 `nasdaqlisted.csv` contains ticker symbols and full company names of the nearly 3,000 NASDAQ index companies.
 
-`nasdaq_news.csv` contains scraped and labeled headlines for the nearly 3,000 NASDAW index companies. This is the other (larger) portion of the full dataset available on [Kaggle](https://www.kaggle.com/sidarcidiacono/news-sentiment-analysis-for-stock-data-by-company) (also linked above). This file contains about 13,400 data points. 
+`nasdaq_news.csv` contains scraped and labeled headlines for the nearly 3,000 NASDAW index companies. This is the other (larger) portion of the full dataset available on [Kaggle](https://www.kaggle.com/sidarcidiacono/news-sentiment-analysis-for-stock-data-by-company) (also linked above). This file contains about 13,400 data points.
 
 ### Scripts
 
+Right now, the script that we've made available to easily call is the `get_data` script. All other functions are easily callable with minimal adjustments. The purpose of this service is largely for us to obtain training data, so minimal effort was put into making any of the other scraping functions flexible and callable on their own (although, it would take an extraordinarily minimal amount of work to adjust this to your need).
 
+In order to call `get_data`, first you'll want to open the `scripts` folder, and take a look at the function call at the bottom of `get_data.py`. Ensure that the filepath being passed into the function call is the correct file that you'd like to write. Please also check out the `get_data()` function and ensure that you're reading from the .csv file that you'd like to be reading from.
+
+Once you ensure that all settings are to your liking, you can run the following from terminal:
+
+If you aren't already in the StockScraper directory:
+
+```zsh
+cd StockScraper
+```
+
+Then,
+
+```zsh
+python3 -m scripts.get_data
+```
+
+As this runs, anytime it enters its `except` block, it will print a count of errors encountered in the format:
+
+```zsh
+DataError: 19
+```
+
+The `news_fetchers` utils that `get_data()` is dependent on will also print a message when they encounter an except block. In this way, you're able to see output that allows you to anticipate your eventual output in a somewhat rudimentary way, and execution of the script will not stop because the functions encounter empty strings or bad inputs. 
+
+Once again, this could be easily manipulated into a slightly easier-to-configure CLI tool if you'd like.
 
 ## Makefile Commands
 
