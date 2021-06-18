@@ -32,7 +32,7 @@ jsonpointer==2.1
 jsonschema==3.2.0
 Keras==2.4.3
 linear-tsv==1.1.0
-lxml==4.6.2
+lxml>=4.6.3
 MarkupSafe==1.1.1
 mypy-extensions==0.4.3
 numpy==1.20.1
@@ -67,7 +67,7 @@ tabulator==1.53.4
 toml==0.10.2
 typed-ast==1.4.2
 unicodecsv==0.14.1
-urllib3==1.26.3
+urllib3>=1.26.5
 Werkzeug==1.0.1
 WTForms==2.3.3
 xlrd==2.0.1
