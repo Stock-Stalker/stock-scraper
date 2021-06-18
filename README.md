@@ -1,8 +1,32 @@
-# StockStalker - Predictor API
+<!-- logo -->
+<p align="center">
+  <img width="300" src="logo.png">
+</p>
+
+<!-- short description -->
+<h3 align="center">The stock scrapper behind StockStalker</h3>
+<h1 align="center">StockStalker - Stock Scraper</h1>
+
+<p align="center">
+    <!-- license -->
+    <img src="https://img.shields.io/github/license/Stock-Stalker/stock-scraper" />
+    <!-- code size  -->
+    <img src="https://img.shields.io/github/languages/code-size/Stock-Stalker/stock-scraper" />
+    <!-- issues -->
+    <img src="https://img.shields.io/github/issues/Stock-Stalker/stock-scraper" />
+    <!-- pull requests -->
+    <img src="https://img.shields.io/github/issues-pr/Stock-Stalker/stock-scraper" />
+    <!-- number of commits per year -->
+    <img src="https://img.shields.io/github/commit-activity/y/Stock-Stalker/stock-scraper" />
+    <!-- last commit -->
+    <img src="https://img.shields.io/github/last-commit/Stock-Stalker/stock-scraper" />
+    <!-- website status -->
+    <img src="https://img.shields.io/website?url=https%3A%2F%2Fstockstalker.tk" />
+</p>
 
 ### Important Files & Folders
 
-The structure of **Stock-Scraper** is intented to be fairly straightforward. If you clone this repository in order to run the scripts:
+The structure of **Stock Scraper** is intented to be fairly straightforward. If you clone this repository in order to run the scripts:
 
 ```zsh
 git clone https://github.com/Stock-Stalker/stock-scraper
@@ -37,7 +61,7 @@ Once you ensure that all settings are to your liking, you can run the following 
 If you aren't already in the StockScraper directory:
 
 ```zsh
-cd StockScraper
+cd stock-scraper
 ```
 
 Then,
